@@ -10,15 +10,6 @@ with open("README.md") as readme_file:
 
 requirements = ["click>=8.0.0", "rich", "pyparsing", "netaddr", "graphviz"]
 
-setup_requirements = [
-    "pytest-runner",
-    "setuptools_scm",
-]
-
-test_requirements = [
-    "pytest",
-]
-
 setup(
     author="Adrián Moreno",
     author_email="amorenoz@redhat.com",
@@ -42,7 +33,6 @@ setup(
     keywords="ovs_dbg",
     name="ovs_dbg",
     packages=find_packages(include=["ovs_dbg", "ovs_dbg.ofparse"]),
-    setup_requires=setup_requirements,
     scripts=[
         "bin/ovs-ofparse",
         "bin/ovs-lgrep",
@@ -60,12 +50,9 @@ setup(
             ],
         ),
     ],
-    test_suite="tests",
-    tests_require=test_requirements,
     url="https://ovs-dbg.readthedocs.io/en/latest/",
     project_urls={
         "Source": "https://github.com/amorenoz/ovs-dbg",
     },
     zip_safe=False,
-    use_scm_version=True,
 )
